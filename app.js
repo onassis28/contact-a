@@ -42,6 +42,13 @@ class UI {
 
        list.append(row);
     }
+    static deletecontact(el){
+        if(el.classList.contains('delete')){
+          el.parentElement.parentElement.remove();  
+        }
+    }
+
+
     static clearFields(){
         document.getElementById('name').value= ''
         document.getElementById('number').value=''
@@ -77,3 +84,9 @@ UI.addContactToList(contact)
 UI.clearFields()
 })
 //event: remove a book 
+document.getElementById('book-list').addEventListener('click', (e) =>{
+
+UI.deletecontact(e.target);
+
+})
+   
